@@ -1,5 +1,7 @@
+/* eslint-disable import/no-named-as-default-member */
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginImport from 'eslint-plugin-import';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
@@ -17,6 +19,10 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
+  eslintPluginImport.flatConfigs.errors,
+  eslintPluginImport.flatConfigs.warnings,
+  eslintPluginImport.flatConfigs.recommended,
+  eslintPluginImport.flatConfigs.typescript,
   {
     linterOptions: {
       reportUnusedDisableDirectives: true,
@@ -29,6 +35,14 @@ export default tseslint.config(
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
+      },
+    },
+
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+        },
       },
     },
   },
