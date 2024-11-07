@@ -1,7 +1,12 @@
 import process from 'node:process';
+import pkg from './package.json' with { type: 'json' };
 
 /** @type {import('eslint').ESLint.Plugin} */
 export default {
+  meta: {
+    name: pkg.name,
+    version: pkg.version,
+  },
   rules: {
     'root-describe': {
       meta: {

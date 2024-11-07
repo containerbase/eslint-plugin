@@ -6,9 +6,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "allowJs": true,
+    "module": "NodeNext",
     "noEmit": true,
-    "verbatimModuleSyntax": true,
-    "noImplicitOverride": true
+    "noImplicitOverride": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true
   },
   "exclude": ["node_modules", "bin", "dist", "coverage", "html"]
 }
