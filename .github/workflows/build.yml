@@ -78,7 +78,7 @@ jobs:
 
       - name: semantic-release
         if: github.event_name == 'push'
-        run: pnpm semantic-release --dry-run true --ci ${{env.DRY_RUN != 'true'}} # TODO use ${{env.DRY_RUN}} for dry-run
+        run: pnpm semantic-release --dry-run ${{env.DRY_RUN}} --ci ${{env.DRY_RUN != 'true'}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
