@@ -17,7 +17,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "index.d.ts"
+    "index.d.ts",
+    "types"
   ],
   "scripts": {
     "eslint": "eslint --cache .",
@@ -52,7 +53,9 @@
     "typescript-eslint": "^8.13.0"
   },
   "peerDependencies": {
-    "eslint": "^9.0.0"
+    "eslint": "^9.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-promise": "^7.0.0"
   },
   "packageManager": "pnpm@9.12.3",
   "engines": {

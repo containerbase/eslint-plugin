@@ -1,16 +1,16 @@
 declare module 'eslint-plugin-import' {
   import type eslint from 'eslint';
 
-  interface Default {
+  type Plugin = eslint.ESLint.Plugin & {
     flatConfigs: {
       errors: eslint.Linter.Config;
-      warnings: eslint.Linter.Config;
       recommended: eslint.Linter.Config;
       typescript: eslint.Linter.Config;
+      warnings: eslint.Linter.Config;
     };
-  }
+  };
 
-  const _default: Default;
+  const plugin: Plugin;
 
-  export = _default;
+  export = plugin;
 }
