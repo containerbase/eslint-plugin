@@ -7,6 +7,7 @@
     "jest",
     "vitest"
   ],
+  "repository": "https://github.com/containerbase/eslint-plugin.git",
   "license": "MIT",
   "author": "Rhys Arkins <rhys@arkins.net>",
   "contributors": [
