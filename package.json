@@ -43,6 +43,7 @@
     "eslint-formatter-gha": "1.5.1",
     "eslint-import-resolver-typescript": "3.6.3",
     "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-promise": "7.1.0",
     "husky": "9.1.6",
     "lint-staged": "15.2.10",
     "npm-run-all2": "7.0.1",

@@ -2,6 +2,7 @@
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginPromise from 'eslint-plugin-promise';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
@@ -23,6 +24,7 @@ export default tseslint.config(
   eslintPluginImport.flatConfigs.warnings,
   eslintPluginImport.flatConfigs.recommended,
   eslintPluginImport.flatConfigs.typescript,
+  eslintPluginPromise.configs['flat/recommended'],
   {
     linterOptions: {
       reportUnusedDisableDirectives: true,
