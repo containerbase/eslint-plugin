@@ -11,19 +11,6 @@
     ],
     "@semantic-release/npm"
   ],
-  "analyzeCommits": {
-    "releaseRules": [
-      {
-        "type": "docs",
-        "scope": "readme.md",
-        "release": "patch"
-      },
-      {
-        "type": "build",
-        "release": "patch"
-      }
-    ]
-  },
   "preset": "conventionalcommits",
   "presetConfig": {
     "types": [
