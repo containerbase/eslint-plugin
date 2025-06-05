@@ -3,7 +3,7 @@ import './types/eslint-plugin-promise.d.ts';
 
 import eslint from 'eslint';
 
-const plugin: eslint.ESLint.Plugin & {
+declare const plugin: eslint.ESLint.Plugin & {
   configs: {
     all: eslint.Linter.Config;
   };
