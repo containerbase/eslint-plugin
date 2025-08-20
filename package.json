@@ -24,9 +24,9 @@
     "eslint": "eslint --cache .",
     "eslint-fix": "eslint --cache --fix .",
     "lint": "run-s prettier eslint lint:types",
+    "lint-fix": "run-s prettier-fix eslint-fix",
     "lint:types": "run-p 'lint:types:*'",
     "lint:types:default": "tsc",
-    "lint-fix": "run-s prettier-fix eslint-fix",
     "prepare": "husky",
     "prettier": "prettier --cache -c -u \"**/*.*\"",
     "prettier-fix": "prettier --cache -w -u \"**/*.*\""
