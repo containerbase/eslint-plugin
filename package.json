@@ -32,7 +32,7 @@
     "prettier-fix": "prettier --cache -w -u \"**/*.*\""
   },
   "devDependencies": {
-    "@eslint/js": "9.34.0",
+    "@eslint/js": "9.35.0",
     "@tsconfig/node20": "20.1.6",
     "@tsconfig/strictest": "2.0.5",
     "@types/eslint-config-prettier": "6.11.3",
