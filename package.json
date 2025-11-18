@@ -66,18 +66,5 @@
   "engines": {
     "node": "^20.9.0 || ^22.11.0 || >=24.10.0",
     "pnpm": "^10.0.0"
-  },
-  "pnpm": {
-    "supportedArchitectures": {
-      "cpu": [
-        "x64",
-        "arm64"
-      ],
-      "os": [
-        "win32",
-        "linux",
-        "darwin"
-      ]
-    }
   }
 }
