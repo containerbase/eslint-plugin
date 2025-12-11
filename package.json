@@ -32,7 +32,10 @@
     "lint:types:default": "tsc",
     "prepare": "husky",
     "prettier": "prettier --cache -c -u \"**/*.*\"",
-    "prettier-fix": "prettier --cache -w -u \"**/*.*\""
+    "prettier-fix": "prettier --cache -w -u \"**/*.*\"",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@eslint/js": "9.39.1",
@@ -41,6 +44,7 @@
     "@tsconfig/strictest": "2.0.8",
     "@types/eslint-config-prettier": "6.11.3",
     "@types/node": "22.19.1",
+    "common-tags": "1.8.2",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
@@ -55,7 +59,8 @@
     "prettier-plugin-packagejson": "2.5.20",
     "semantic-release": "25.0.2",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.49.0"
+    "typescript-eslint": "8.49.0",
+    "vitest": "4.0.15"
   },
   "peerDependencies": {
     "eslint": "^9.0.0",

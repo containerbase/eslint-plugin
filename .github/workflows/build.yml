@@ -41,9 +41,23 @@ jobs:
           pnpm prettier
           pnpm lint:types
 
+  test:
+    needs:
+      - setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: ⚙️ Setup
+        uses: containerbase/internal-tools/setup@3159f3f297e9f0ccd5b18ce5c723e0d86a665f64 # v3.14.21
+
+      - name: test
+        run: pnpm test
+
   release:
     needs:
       - lint
+      - test
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
