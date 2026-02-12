@@ -72,8 +72,6 @@ importers:
         specifier: 8.54.0
         version: 8.54.0(eslint@9.39.2)(typescript@5.9.3)
 
-  types: {}
-
 packages:
 
   '@actions/core@3.0.0':
