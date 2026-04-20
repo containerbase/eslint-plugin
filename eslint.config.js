@@ -3,9 +3,13 @@ import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginPromise from 'eslint-plugin-promise';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 
-export default tseslint.config(
+const jsFiles = { files: ['**/*.{js,cjs,mjs,mts,ts}'] };
+
+export default defineConfig(
   {
     ignores: [
       'dist/',
@@ -16,6 +20,9 @@ export default tseslint.config(
       '**/node_modules/',
       '.pnpm-store',
     ],
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+    },
   },
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
@@ -26,11 +33,11 @@ export default tseslint.config(
   eslintPluginImport.flatConfigs.typescript,
   eslintPluginPromise.configs['flat/recommended'],
   {
-    linterOptions: {
-      reportUnusedDisableDirectives: true,
-    },
-
+    ...jsFiles,
     languageOptions: {
+      globals: {
+        ...globals.node,
+      },
       ecmaVersion: 'latest',
       sourceType: 'module',
 
@@ -50,7 +57,7 @@ export default tseslint.config(
   },
   eslintConfigPrettier,
   {
-    files: ['**/*.{ts,js,cjs,mjs}'],
+    ...jsFiles,
     rules: {},
   },
 );
