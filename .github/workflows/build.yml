@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@ffdc58bff65e256a4bf73e63e003901c06747641 # v4.6.0
+        uses: containerbase/internal-tools/setup@b4ae852a7c41333ca1876519026160d1b3c37206 # v4.6.1
         with:
           save-cache: true
 
@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@ffdc58bff65e256a4bf73e63e003901c06747641 # v4.6.0
+        uses: containerbase/internal-tools/setup@b4ae852a7c41333ca1876519026160d1b3c37206 # v4.6.1
 
       - name: lint
         run: |
@@ -63,7 +63,7 @@ jobs:
       - uses: sigstore/cosign-installer@cad07c2e89fa2edd6e2d7bab4c1aa38e53f76003 # v4.1.1
 
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@ffdc58bff65e256a4bf73e63e003901c06747641 # v4.6.0
+        uses: containerbase/internal-tools/setup@b4ae852a7c41333ca1876519026160d1b3c37206 # v4.6.1
         with:
           checkout: false
 
