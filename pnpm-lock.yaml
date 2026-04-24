@@ -23,6 +23,9 @@ importers:
       '@types/eslint-config-prettier':
         specifier: 6.11.3
         version: 6.11.3
+      '@types/estree':
+        specifier: 1.0.8
+        version: 1.0.8
       '@types/node':
         specifier: 22.19.17
         version: 22.19.17

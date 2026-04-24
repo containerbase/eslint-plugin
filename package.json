@@ -21,6 +21,7 @@
   "files": [
     "index.js",
     "index.d.ts",
+    "rules",
     "types"
   ],
   "scripts": {
@@ -40,6 +41,7 @@
     "@tsconfig/node20": "20.1.9",
     "@tsconfig/strictest": "2.0.8",
     "@types/eslint-config-prettier": "6.11.3",
+    "@types/estree": "1.0.8",
     "@types/node": "22.19.17",
     "conventional-changelog-conventionalcommits": "9.3.1",
     "eslint": "9.39.4",
