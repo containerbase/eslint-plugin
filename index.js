@@ -1,9 +1,11 @@
 import pkg from './package.json' with { type: 'json' };
+import enforceTsExtension from './rules/enforce-ts-extension.js';
 import testRootDescribe from './rules/test-root-describe.js';
 
 /** @type {Record<string, import('eslint').Rule.RuleModule>} */
 const rules = {
   'test-root-describe': testRootDescribe,
+  'enforce-ts-extension': enforceTsExtension,
 };
 
 /** @type {Record<string, import('eslint').Linter.Config> } */
@@ -16,6 +18,7 @@ const configs = {
     },
     rules: {
       '@containerbase/test-root-describe': 'error',
+      '@containerbase/enforce-ts-extension': 'error',
     },
   },
 };
