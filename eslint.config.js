@@ -1,10 +1,10 @@
-/* eslint-disable import/no-named-as-default-member */
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import eslintPluginImport from 'eslint-plugin-import';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import * as importX from 'eslint-plugin-import-x';
 import eslintPluginPromise from 'eslint-plugin-promise';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import { configs as tseslint } from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
 
 const jsFiles = { files: ['**/*.{js,cjs,mjs,mts,ts}'] };
@@ -25,15 +25,12 @@ export default defineConfig(
     },
   },
   js.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  ...tseslint.configs.stylisticTypeChecked,
-  eslintPluginImport.flatConfigs.errors,
-  eslintPluginImport.flatConfigs.warnings,
-  eslintPluginImport.flatConfigs.recommended,
-  eslintPluginImport.flatConfigs.typescript,
+  ...tseslint.recommendedTypeChecked,
+  ...tseslint.stylisticTypeChecked,
   eslintPluginPromise.configs['flat/recommended'],
   {
     ...jsFiles,
+    extends: [importX.flatConfigs.recommended, importX.flatConfigs.typescript],
     languageOptions: {
       globals: {
         ...globals.node,
@@ -48,11 +45,9 @@ export default defineConfig(
     },
 
     settings: {
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-        },
-      },
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({ project: 'tsconfig.lint.json' }),
+      ],
     },
   },
   eslintConfigPrettier,
