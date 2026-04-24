@@ -87,6 +87,10 @@ export default {
     },
   },
   create(context) {
+    if (!/\.[cm]?tsx?$/.test(context.filename)) {
+      // not a TypeScript file, ignore
+      return {};
+    }
     return {
       ImportDeclaration(node) {
         checkLiteral(context, node.source);

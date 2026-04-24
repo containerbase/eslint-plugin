@@ -5,14 +5,14 @@ export default {
   },
   create(context) {
     const absoluteFileName = context.filename;
-    if (!absoluteFileName.endsWith('.spec.ts')) {
+    if (!/\.spec\.[cm]?tsx?$/.test(absoluteFileName)) {
       return {};
     }
     const relativeFileName = absoluteFileName
       .replace(context.cwd, '')
       .replace(/\\/g, '/')
       .replace(/^(?:\/(?:lib|src|test))?\//, '');
-    const testName = relativeFileName.replace(/\.spec\.ts$/, '');
+    const testName = relativeFileName.replace(/\.spec\.[cm]?tsx?$/, '');
     return {
       CallExpression(node) {
         const { callee } = node;
