@@ -46,7 +46,7 @@ export default defineConfig(
 
     settings: {
       'import-x/resolver-next': [
-        createTypeScriptImportResolver({ project: 'tsconfig.lint.json' }),
+        createTypeScriptImportResolver({ alwaysTryTypes: true }),
       ],
     },
   },
