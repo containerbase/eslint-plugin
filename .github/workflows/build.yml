@@ -41,9 +41,23 @@ jobs:
           pnpm oxfmt
           pnpm lint:types
 
+  test:
+    needs:
+      - setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: ⚙️ Setup
+        uses: containerbase/internal-tools/setup@d7fbd383dbf6cddf7e6bb2d787342a7f1cb92620 # v5.0.54
+
+      - name: test
+        run: pnpm test
+
   release:
     needs:
       - lint
+      - test
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
