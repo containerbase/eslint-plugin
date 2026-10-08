@@ -37,7 +37,7 @@ jobs:
 
       - name: lint
         run: |
-          pnpm eslint -f gha
+          pnpm oxlint --format github
           pnpm prettier
           pnpm lint:types
 
