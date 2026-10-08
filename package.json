@@ -7,33 +7,33 @@
     "jest",
     "vitest"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/containerbase/eslint-plugin.git"
-  },
   "license": "MIT",
   "author": "Rhys Arkins <rhys@arkins.net>",
   "contributors": [
     "Michael Kriese <michael.kriese@visualon.de>"
   ],
-  "type": "module",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/containerbase/eslint-plugin.git"
+  },
   "files": [
     "index.js",
     "index.d.ts",
     "rules",
     "types"
   ],
+  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "lint": "run-s prettier oxlint lint:types",
+    "lint": "run-s oxfmt oxlint lint:types",
     "lint:types": "run-p 'lint:types:*'",
     "lint:types:default": "tsc",
-    "lint-fix": "run-s prettier-fix oxlint-fix",
+    "lint-fix": "run-s oxfmt-fix oxlint-fix",
+    "oxfmt": "oxfmt --check",
+    "oxfmt-fix": "oxfmt",
     "oxlint": "oxlint",
     "oxlint-fix": "oxlint --fix",
-    "prepare": "husky",
-    "prettier": "prettier --cache -c -u \"**/*.*\"",
-    "prettier-fix": "prettier --cache -w -u \"**/*.*\""
+    "prepare": "husky"
   },
   "devDependencies": {
     "@semantic-release/exec": "7.1.0",
@@ -47,10 +47,9 @@
     "husky": "9.1.7",
     "lint-staged": "17.6.0",
     "npm-run-all2": "9.0.3",
+    "oxfmt": "0.72.0",
     "oxlint": "1.86.0",
     "oxlint-tsgolint": "7.0.2003",
-    "prettier": "3.9.9",
-    "prettier-plugin-packagejson": "3.0.2",
     "semantic-release": "25.0.9",
     "typescript": "5.9.3"
   },
@@ -58,9 +57,9 @@
     "eslint": "^9.0.0 || ^10.0.0",
     "eslint-plugin-promise": "^7.0.0"
   },
-  "packageManager": "pnpm@12.9.1",
   "engines": {
     "node": "^22.11.0 || >=24.10.0",
     "pnpm": ">=10.0.0"
-  }
+  },
+  "packageManager": "pnpm@12.9.1"
 }

@@ -1,11 +1,4 @@
-const VI_METHODS = new Set([
-  'mock',
-  'doMock',
-  'unmock',
-  'doUnmock',
-  'importActual',
-  'importMock',
-]);
+const VI_METHODS = new Set(['mock', 'doMock', 'unmock', 'doUnmock', 'importActual', 'importMock']);
 
 /** @param {string} value */
 function isLocalPath(value) {
