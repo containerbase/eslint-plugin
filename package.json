@@ -38,7 +38,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@containerbase/semantic-release-pnpm": "1.4.3",
+    "@containerbase/semantic-release-pnpm": "1.4.4",
     "@tsconfig/node24": "24.0.5",
     "@tsconfig/strictest": "2.0.8",
     "@types/estree": "1.0.9",
